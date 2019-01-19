@@ -5,8 +5,8 @@ from user import views
 app_name = 'user'
 
 urlpatterns = [
-    path('api/login/', obtain_jwt_token, name='login'),
-    path('api/token/refresh/', refresh_jwt_token, name='refresh'),
+    path('login/', obtain_jwt_token, name='login'),
+    path('token/refresh/', refresh_jwt_token, name='refresh'),
     path('hello/', views.HelloViewAPI.as_view(), name='hello'),
-    path('api/signup/', views.CreateUserViewAPI.as_view(), name='signup'),
+    path('signup/', views.CreateUserViewAPI.as_view(), name='signup'),
 ]

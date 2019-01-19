@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.conf import settings
 
 
 class UserManager(BaseUserManager):
@@ -26,6 +27,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)       # user needs to be saved if one has changed it's param
         return user
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     """
     Custom user model that supports using email instead of username
@@ -39,3 +41,22 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
+
+    def __str__(self):
+        return self.email
+
+
+class Post(models.Model):
+    """
+    Create posts - will have many to one relationship with any user
+    """
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    title = models.CharField(max_length=60, blank=False, unique=True, db_index=True)
+    tweet = models.CharField(max_length=1000, blank=True)
+    date_time = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    def __str__(self):
+        return self.title
