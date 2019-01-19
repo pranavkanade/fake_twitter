@@ -55,8 +55,10 @@ class Post(models.Model):
         on_delete=models.CASCADE
     )
     title = models.CharField(max_length=60, blank=False, unique=True, db_index=True)
-    tweet = models.CharField(max_length=1000, blank=True)
-    date_time = models.DateTimeField(auto_now_add=True, db_index=True)
+    fake_tweet = models.TextField(max_length=1000, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True, db_index=True)
+    liked_by = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name="post_liked_by")
+    disliked_by = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name="post_disliked_by")
 
     def __str__(self):
         return self.title
