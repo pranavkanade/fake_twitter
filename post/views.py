@@ -56,3 +56,11 @@ class PostLikeToggleView(generics.UpdateAPIView):
         }
         return self.partial_update(request, payload)
 
+
+class PostPrivateViewSet(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user).order_by('-id')

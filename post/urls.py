@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from post.views import PostViewSet, PostDetailView, PostLikeToggleView
+from post.views import PostViewSet, PostDetailView, PostLikeToggleView, PostPrivateViewSet
 
 router = DefaultRouter()
 router.register('', PostViewSet)
@@ -12,4 +12,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('<int:pk>/', PostDetailView.as_view(), name="details"),
     path('<int:pk>/like/', PostLikeToggleView.as_view(), name="post-like"),
+    path('me/', PostPrivateViewSet.as_view(), name="personal-posts"),
 ]
