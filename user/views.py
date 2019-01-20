@@ -1,11 +1,22 @@
 from django.contrib.auth import get_user_model
 from django.http.response import JsonResponse
-from rest_framework import generics, status
+from django.shortcuts import redirect, reverse
+
+from rest_framework import generics, status, decorators
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from core.models import UserAdvInfo
 from core.utils.signup_utils import verify_email, collect_adv_info
 from user.serializers import UserAdvInfoSerializer, UserDetailSerializer, UserSerializer
+
+
+class SelfUserViewAPI(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserDetailSerializer
+    queryset = get_user_model().objects.all()
+
+    def get_queryset(self):
+        return get_user_model().objects.filter(pk=self.request.user.id)
 
 
 class DetailUserViewAPI(generics.RetrieveAPIView):
