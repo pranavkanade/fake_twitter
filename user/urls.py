@@ -7,6 +7,5 @@ app_name = 'user'
 urlpatterns = [
     path('login/', obtain_jwt_token, name='login'),
     path('token/refresh/', refresh_jwt_token, name='refresh'),
-    path('hello/', views.HelloViewAPI.as_view(), name='hello'),
     path('signup/', views.CreateUserViewAPI.as_view(), name='signup'),
 ]

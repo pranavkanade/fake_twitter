@@ -1,20 +1,50 @@
-from rest_framework import generics
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework import generics, status
+from django.http.response import JsonResponse
+from rest_framework.permissions import AllowAny
+from core.utils.signup_utils import verify_email
 
 from user.serializers import UserSerializer
-
-
-class HelloViewAPI(APIView):
-    permission_classes = (IsAuthenticated,)
-
-    def get(self, request):
-        content = {'message': 'Hello, World!'}
-        return Response(content)
 
 
 class CreateUserViewAPI(generics.CreateAPIView):
     """Create new user using api"""
     permission_classes = (AllowAny,)
     serializer_class = UserSerializer
+
+    def post(self, request, *args, **kwargs):
+        print(request.data['email'])
+        new_user_email = request.data['email']
+
+        # In case of valid email address: primary_ret_code = 200 & primary_error = None
+        is_email_valid, primary_ret_code, primary_error_details = verify_email(email=new_user_email)
+        if is_email_valid:
+            # Score is more than min
+            return self.create(request, *args, **kwargs)
+        else:
+            return self.verify_email_error_handler(ret_code=primary_ret_code, error_details=primary_error_details)
+
+    def verify_email_error_handler(self, ret_code, error_details):
+        if ret_code == status.HTTP_401_UNAUTHORIZED:
+            # This means there is problem with API key
+            # TODO: Add this to logging
+            res = {
+                'error': {
+                    'code': status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    'details': "Internal Server Error! Please try again, after some time."
+                }
+            }
+            status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+        else:
+            # @Here means -
+            # Either email is not valid - got error from hunter.io other than 401 (above)
+            # OR
+            # Did not encounter error with the verification API but, the score is low
+            res = {
+                'error': {
+                    'code': status.HTTP_400_BAD_REQUEST,
+                    'details': error_details
+                }
+            }
+            status_code = status.HTTP_400_BAD_REQUEST
+
+        return JsonResponse(data=res, status=status_code)
