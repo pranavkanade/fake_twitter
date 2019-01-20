@@ -1,16 +1,11 @@
 # Prak-Net:
 
-Building a simple twitter
+Building a simple twitter rest api
 
-- Create new user
-```bash
-curl -X POST -d "email=user1@mail.com&username=user1&password=user1pass" http://localhost:8000/api/user/signup/
-```
+#### Before You RUN:
+**Please add API keys for Hunter and Clearbit**
 
-- Get JWT auth token
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{"username":"admin","password":"password123"}' http://localhost:8000/api/user/login/
-```
+
 
 Feature API endpoints List -
 1. Create Users (signup)                        : `/api/user/signup/` (POST)

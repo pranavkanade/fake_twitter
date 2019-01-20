@@ -23,6 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '&&od@7v$4-pc7fgrlojxw4*6z96_sqt$93v7l_jsf8&dwm4-=8'
 
+# HUNTER.IO API KEY
+HUNTER_API_KEY = ''
+
+# CLEARBIT/ENRICHMENT API KEY
+CLEARBIT_API_KEY = ''
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
