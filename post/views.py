@@ -2,7 +2,7 @@ from rest_framework import viewsets, mixins, generics
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 from core.models import Post
-from post.serializers import PostSerializer, PostDetailSerializer
+from post.serializers import PostSerializer, PostDetailSerializer, PostLikeSerializer
 
 
 class PostViewSet(viewsets.GenericViewSet,
@@ -36,7 +36,7 @@ class PostDetailView(generics.RetrieveAPIView):
 class PostLikeToggleView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Post.objects.all()
-    serializer_class = PostSerializer
+    serializer_class = PostLikeSerializer
 
     def patch(self, request, *args, **kwargs):
         post_obj = get_object_or_404(Post, pk=kwargs['pk'])

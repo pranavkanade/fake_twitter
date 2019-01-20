@@ -7,6 +7,13 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'title', 'date_created', 'fake_tweet', 'liked_by', 'disliked_by')
+        read_only_fields = ('id', 'liked_by', 'disliked_by')
+
+
+class PostLikeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('id', 'title', 'date_created', 'fake_tweet', 'liked_by', 'disliked_by')
         read_only_fields = ('id',)
 
 
