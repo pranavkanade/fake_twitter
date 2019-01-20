@@ -1,5 +1,6 @@
 from rest_framework import viewsets, mixins, generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from core.models import Post
 from post.serializers import PostSerializer, PostDetailSerializer, PostLikeSerializer
@@ -41,14 +42,46 @@ class PostLikeToggleView(generics.UpdateAPIView):
     def patch(self, request, *args, **kwargs):
         post_obj = get_object_or_404(Post, pk=kwargs['pk'])
         if post_obj.user.id != request.user.id:
-            if request.user not in post_obj.liked_by.all():
-                post_obj.liked_by.add(request.user)
+            if request.user in post_obj.liked_by.all():
+                # had liked previously
+                post_obj.liked_by.remove(request.user)
+            else:
+                # had disliked previously
                 if request.user in post_obj.disliked_by.all():
                     post_obj.disliked_by.remove(request.user)
+
+                # add the person to the like array
+                post_obj.liked_by.add(request.user)
+        else:
+            raise PermissionDenied(detail="Authors are not allowed to like their own post")
+
+        payload = {
+            'liked_by': post_obj.liked_by,
+            'disliked_by': post_obj.disliked_by
+        }
+        return self.partial_update(request, payload)
+
+
+class PostDislikeToggleView(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Post.objects.all()
+    serializer_class = PostLikeSerializer
+
+    def patch(self, request, *args, **kwargs):
+        post_obj = get_object_or_404(Post, pk=kwargs['pk'])
+        if post_obj.user.id != request.user.id:
+            if request.user in post_obj.disliked_by.all():
+                # If user has already disliked the post. toggle the person's dislike
+                post_obj.disliked_by.remove(request.user)
             else:
-                post_obj.liked_by.remove(request.user)
-                if request.user not in post_obj.disliked_by.all():
-                    post_obj.disliked_by.add(request.user)
+                # Check if the person had liked the post previously if yes then remove
+                if request.user in post_obj.liked_by.all():
+                    post_obj.liked_by.remove(request.user)
+
+                # add the person to the array
+                post_obj.disliked_by.add(request.user)
+        else:
+            raise PermissionDenied(detail="Authors are not allowed to dislike their own post")
 
         payload = {
             'liked_by': post_obj.liked_by,
