@@ -1,18 +1,43 @@
-from rest_framework import generics, status
+from django.contrib.auth import get_user_model
 from django.http.response import JsonResponse
-from rest_framework.permissions import AllowAny
-from core.utils.signup_utils import verify_email
+from rest_framework import generics, status
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
-from user.serializers import UserSerializer
+from core.models import UserAdvInfo
+from core.utils.signup_utils import verify_email, collect_adv_info
+from user.serializers import UserAdvInfoSerializer, UserDetailSerializer, UserSerializer
 
 
+class DetailUserViewAPI(generics.RetrieveAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserDetailSerializer
+    queryset = get_user_model().objects.all()
+
+
+class ListUserViewAPI(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserSerializer
+    queryset = get_user_model().objects.all()
+
+
+class CreateUserAdvInfo(generics.CreateAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = UserAdvInfoSerializer
+
+
+# can also use ListCreateAPIView to get both GET and POST here
 class CreateUserViewAPI(generics.CreateAPIView):
     """Create new user using api"""
     permission_classes = (AllowAny,)
-    serializer_class = UserSerializer
+    serializer_class = UserDetailSerializer
+
+    def perform_create(self, serializer):
+        new_user_email = self.request.data['email']
+        adv_info_payload = collect_adv_info(new_user_email)
+        adv_info = UserAdvInfo.objects.create(**adv_info_payload)
+        serializer.save(adv_info=adv_info)
 
     def post(self, request, *args, **kwargs):
-        print(request.data['email'])
         new_user_email = request.data['email']
 
         # In case of valid email address: primary_ret_code = 200 & primary_error = None

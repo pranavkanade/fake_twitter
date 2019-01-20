@@ -1,7 +1,10 @@
-import requests
-from django.conf import settings
 from core.conf import HUNTER_BASE_API_ENDPOINT, HUNTER_VERIFY_EMAIL_ENDPOINT, MIN_EMAIL_VERIFICATION_SCORE
+
+from django.conf import settings
 from rest_framework import status
+
+import requests
+import clearbit
 
 
 def verify_email(email):
@@ -29,3 +32,32 @@ def verify_email(email):
                             " Please provide different email address."
             return False, status.HTTP_400_BAD_REQUEST, error_details
 
+
+def collect_adv_info(email):
+    """User clearbit/enrichment api and collect more info about user (using combined method)"""
+    clearbit.key = settings.CLEARBIT_API_KEY
+
+    response = clearbit.Enrichment.find(email=email, stream=True)
+
+    if response['person'] is not None and response['person']['twitter'] is not None:
+        user_twitter_handle = response['person']['twitter']['handle']
+    else:
+        user_twitter_handle = None
+
+    if response['company'] is not None:
+        company_name = response['company']['name']
+    else:
+        company_name = None
+
+    if response['company'] is not None:
+        company_location = response['company']['location']
+    else:
+        company_location = None
+
+    adv_info = {
+        'user_twitter_handle': user_twitter_handle,
+        'company_name': company_name,
+        'company_location': company_location
+    }
+
+    return adv_info
