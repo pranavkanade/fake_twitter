@@ -60,7 +60,7 @@ class Post(models.Model):
     """
     Create posts - will have many to one relationship with any user
     """
-    author = models.ForeignKey(
+    user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
