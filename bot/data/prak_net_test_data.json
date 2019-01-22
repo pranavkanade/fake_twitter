@@ -188,53 +188,6 @@
     ]
   },
   {
-    "email": "dana.scully@fbi.gov",
-    "username": "dana",
-    "password": "danapass",
-    "posts": [
-      {
-        "title": "dana title - 1",
-        "fake_tweet": "dana title fake tweet - 1"
-      },
-      {
-        "title": "dana title - 2",
-        "fake_tweet": "dana title fake tweet - 2"
-      },
-      {
-        "title": "dana title - 3",
-        "fake_tweet": "dana title fake tweet - 3"
-      },
-      {
-        "title": "dana title - 4",
-        "fake_tweet": "dana title fake tweet - 4"
-      },
-      {
-        "title": "dana title - 5",
-        "fake_tweet": "dana title fake tweet - 5"
-      },
-      {
-        "title": "dana title - 6",
-        "fake_tweet": "dana title fake tweet - 6"
-      },
-      {
-        "title": "dana title - 7",
-        "fake_tweet": "dana title fake tweet - 7"
-      },
-      {
-        "title": "dana title - 8",
-        "fake_tweet": "dana title fake tweet - 8"
-      },
-      {
-        "title": "dana title - 9",
-        "fake_tweet": "dana title fake tweet - 9"
-      },
-      {
-        "title": "dana title - 10",
-        "fake_tweet": "dana title fake tweet - 10"
-      }
-    ]
-  },
-  {
     "email": "christopher.carbone@foxnews.com",
     "username": "christopher",
     "password": "christopherpass",

@@ -4,9 +4,9 @@ from django.db import models
 
 
 class UserAdvInfo(models.Model):
-    user_twitter_handle = models.CharField(max_length=255, blank=True)
-    company_name = models.CharField(max_length=255, blank=True)
-    company_location = models.TextField(max_length=500, blank=True)
+    user_twitter_handle = models.CharField(max_length=255, blank=True, null=True)
+    company_name = models.CharField(max_length=255, blank=True, null=True)
+    company_location = models.TextField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.user_twitter_handle
