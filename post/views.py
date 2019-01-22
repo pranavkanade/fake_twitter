@@ -54,7 +54,7 @@ class PostLikeToggleView(generics.UpdateAPIView):
                 # add the person to the like array
                 post_obj.liked_by.add(request.user)
         else:
-            raise PermissionDenied(detail="Authors are not allowed to like their own post")
+            raise PermissionDenied(detail="Users are not allowed to like their own post")
 
         payload = {
             'liked_by': post_obj.liked_by,
@@ -82,7 +82,7 @@ class PostDislikeToggleView(generics.UpdateAPIView):
                 # add the person to the array
                 post_obj.disliked_by.add(request.user)
         else:
-            raise PermissionDenied(detail="Authors are not allowed to dislike their own post")
+            raise PermissionDenied(detail="Users are not allowed to dislike their own post")
 
         payload = {
             'liked_by': post_obj.liked_by,

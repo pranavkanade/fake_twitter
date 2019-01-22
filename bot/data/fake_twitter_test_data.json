@@ -1,0 +1,425 @@
+[
+  {
+    "email": "anand@persistent.com",
+    "username": "anand",
+    "password": "anandpass",
+    "posts": [
+      {
+        "title": "anand title - 1",
+        "fake_tweet": "anand title fake tweet - 1"
+      },
+      {
+        "title": "anand title - 2",
+        "fake_tweet": "anand title fake tweet - 2"
+      },
+      {
+        "title": "anand title - 3",
+        "fake_tweet": "anand title fake tweet - 3"
+      },
+      {
+        "title": "anand title - 4",
+        "fake_tweet": "anand title fake tweet - 4"
+      },
+      {
+        "title": "anand title - 5",
+        "fake_tweet": "anand title fake tweet - 5"
+      },
+      {
+        "title": "anand title - 6",
+        "fake_tweet": "anand title fake tweet - 6"
+      },
+      {
+        "title": "anand title - 7",
+        "fake_tweet": "anand title fake tweet - 7"
+      },
+      {
+        "title": "anand title - 8",
+        "fake_tweet": "anand title fake tweet - 8"
+      },
+      {
+        "title": "anand title - 9",
+        "fake_tweet": "anand title fake tweet - 9"
+      },
+      {
+        "title": "anand title - 10",
+        "fake_tweet": "anand title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "alex@clearbit.com",
+    "username": "alex",
+    "password": "alexpass",
+    "posts": [
+      {
+        "title": "alex title - 1",
+        "fake_tweet": "alex title fake tweet - 1"
+      },
+      {
+        "title": "alex title - 2",
+        "fake_tweet": "alex title fake tweet - 2"
+      },
+      {
+        "title": "alex title - 3",
+        "fake_tweet": "alex title fake tweet - 3"
+      },
+      {
+        "title": "alex title - 4",
+        "fake_tweet": "alex title fake tweet - 4"
+      },
+      {
+        "title": "alex title - 5",
+        "fake_tweet": "alex title fake tweet - 5"
+      },
+      {
+        "title": "alex title - 6",
+        "fake_tweet": "alex title fake tweet - 6"
+      },
+      {
+        "title": "alex title - 7",
+        "fake_tweet": "alex title fake tweet - 7"
+      },
+      {
+        "title": "alex title - 8",
+        "fake_tweet": "alex title fake tweet - 8"
+      },
+      {
+        "title": "alex title - 9",
+        "fake_tweet": "alex title fake tweet - 9"
+      },
+      {
+        "title": "alex title - 10",
+        "fake_tweet": "alex title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "monaweng@google.com",
+    "username": "monaweng",
+    "password": "monawengpass",
+    "posts": [
+      {
+        "title": "monaweng title - 1",
+        "fake_tweet": "monaweng title fake tweet - 1"
+      },
+      {
+        "title": "monaweng title - 2",
+        "fake_tweet": "monaweng title fake tweet - 2"
+      },
+      {
+        "title": "monaweng title - 3",
+        "fake_tweet": "monaweng title fake tweet - 3"
+      },
+      {
+        "title": "monaweng title - 4",
+        "fake_tweet": "monaweng title fake tweet - 4"
+      },
+      {
+        "title": "monaweng title - 5",
+        "fake_tweet": "monaweng title fake tweet - 5"
+      },
+      {
+        "title": "monaweng title - 6",
+        "fake_tweet": "monaweng title fake tweet - 6"
+      },
+      {
+        "title": "monaweng title - 7",
+        "fake_tweet": "monaweng title fake tweet - 7"
+      },
+      {
+        "title": "monaweng title - 8",
+        "fake_tweet": "monaweng title fake tweet - 8"
+      },
+      {
+        "title": "monaweng title - 9",
+        "fake_tweet": "monaweng title fake tweet - 9"
+      },
+      {
+        "title": "monaweng title - 10",
+        "fake_tweet": "monaweng title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "bernardo.zamora@microsoft.com",
+    "username": "bernardo",
+    "password": "bernardopass",
+    "posts": [
+      {
+        "title": "bernardo title - 1",
+        "fake_tweet": "bernardo title fake tweet - 1"
+      },
+      {
+        "title": "bernardo title - 2",
+        "fake_tweet": "bernardo title fake tweet - 2"
+      },
+      {
+        "title": "bernardo title - 3",
+        "fake_tweet": "bernardo title fake tweet - 3"
+      },
+      {
+        "title": "bernardo title - 4",
+        "fake_tweet": "bernardo title fake tweet - 4"
+      },
+      {
+        "title": "bernardo title - 5",
+        "fake_tweet": "bernardo title fake tweet - 5"
+      },
+      {
+        "title": "bernardo title - 6",
+        "fake_tweet": "bernardo title fake tweet - 6"
+      },
+      {
+        "title": "bernardo title - 7",
+        "fake_tweet": "bernardo title fake tweet - 7"
+      },
+      {
+        "title": "bernardo title - 8",
+        "fake_tweet": "bernardo title fake tweet - 8"
+      },
+      {
+        "title": "bernardo title - 9",
+        "fake_tweet": "bernardo title fake tweet - 9"
+      },
+      {
+        "title": "bernardo title - 10",
+        "fake_tweet": "bernardo title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "christopher.carbone@foxnews.com",
+    "username": "christopher",
+    "password": "christopherpass",
+    "posts": [
+      {
+        "title": "christopher title - 1",
+        "fake_tweet": "christopher title fake tweet - 1"
+      },
+      {
+        "title": "christopher title - 2",
+        "fake_tweet": "christopher title fake tweet - 2"
+      },
+      {
+        "title": "christopher title - 3",
+        "fake_tweet": "christopher title fake tweet - 3"
+      },
+      {
+        "title": "christopher title - 4",
+        "fake_tweet": "christopher title fake tweet - 4"
+      },
+      {
+        "title": "christopher title - 5",
+        "fake_tweet": "christopher title fake tweet - 5"
+      },
+      {
+        "title": "christopher title - 6",
+        "fake_tweet": "christopher title fake tweet - 6"
+      },
+      {
+        "title": "christopher title - 7",
+        "fake_tweet": "christopher title fake tweet - 7"
+      },
+      {
+        "title": "christopher title - 8",
+        "fake_tweet": "christopher title fake tweet - 8"
+      },
+      {
+        "title": "christopher title - 9",
+        "fake_tweet": "christopher title fake tweet - 9"
+      },
+      {
+        "title": "christopher title - 10",
+        "fake_tweet": "christopher title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "lisa.fischer@cnn.com",
+    "username": "lisa",
+    "password": "lisapass",
+    "posts": [
+      {
+        "title": "lisa title - 1",
+        "fake_tweet": "lisa title fake tweet - 1"
+      },
+      {
+        "title": "lisa title - 2",
+        "fake_tweet": "lisa title fake tweet - 2"
+      },
+      {
+        "title": "lisa title - 3",
+        "fake_tweet": "lisa title fake tweet - 3"
+      },
+      {
+        "title": "lisa title - 4",
+        "fake_tweet": "lisa title fake tweet - 4"
+      },
+      {
+        "title": "lisa title - 5",
+        "fake_tweet": "lisa title fake tweet - 5"
+      },
+      {
+        "title": "lisa title - 6",
+        "fake_tweet": "lisa title fake tweet - 6"
+      },
+      {
+        "title": "lisa title - 7",
+        "fake_tweet": "lisa title fake tweet - 7"
+      },
+      {
+        "title": "lisa title - 8",
+        "fake_tweet": "lisa title fake tweet - 8"
+      },
+      {
+        "title": "lisa title - 9",
+        "fake_tweet": "lisa title fake tweet - 9"
+      },
+      {
+        "title": "lisa title - 10",
+        "fake_tweet": "lisa title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "ashish.shetty@tcs.com",
+    "username": "ashish",
+    "password": "ashishpass",
+    "posts": [
+      {
+        "title": "ashish title - 1",
+        "fake_tweet": "ashish title fake tweet - 1"
+      },
+      {
+        "title": "ashish title - 2",
+        "fake_tweet": "ashish title fake tweet - 2"
+      },
+      {
+        "title": "ashish title - 3",
+        "fake_tweet": "ashish title fake tweet - 3"
+      },
+      {
+        "title": "ashish title - 4",
+        "fake_tweet": "ashish title fake tweet - 4"
+      },
+      {
+        "title": "ashish title - 5",
+        "fake_tweet": "ashish title fake tweet - 5"
+      },
+      {
+        "title": "ashish title - 6",
+        "fake_tweet": "ashish title fake tweet - 6"
+      },
+      {
+        "title": "ashish title - 7",
+        "fake_tweet": "ashish title fake tweet - 7"
+      },
+      {
+        "title": "ashish title - 8",
+        "fake_tweet": "ashish title fake tweet - 8"
+      },
+      {
+        "title": "ashish title - 9",
+        "fake_tweet": "ashish title fake tweet - 9"
+      },
+      {
+        "title": "ashish title - 10",
+        "fake_tweet": "ashish title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "sara.obrien@cnn.com",
+    "username": "sara",
+    "password": "sarapass",
+    "posts": [
+      {
+        "title": "sara title - 1",
+        "fake_tweet": "sara title fake tweet - 1"
+      },
+      {
+        "title": "sara title - 2",
+        "fake_tweet": "sara title fake tweet - 2"
+      },
+      {
+        "title": "sara title - 3",
+        "fake_tweet": "sara title fake tweet - 3"
+      },
+      {
+        "title": "sara title - 4",
+        "fake_tweet": "sara title fake tweet - 4"
+      },
+      {
+        "title": "sara title - 5",
+        "fake_tweet": "sara title fake tweet - 5"
+      },
+      {
+        "title": "sara title - 6",
+        "fake_tweet": "sara title fake tweet - 6"
+      },
+      {
+        "title": "sara title - 7",
+        "fake_tweet": "sara title fake tweet - 7"
+      },
+      {
+        "title": "sara title - 8",
+        "fake_tweet": "sara title fake tweet - 8"
+      },
+      {
+        "title": "sara title - 9",
+        "fake_tweet": "sara title fake tweet - 9"
+      },
+      {
+        "title": "sara title - 10",
+        "fake_tweet": "sara title fake tweet - 10"
+      }
+    ]
+  },
+  {
+    "email": "kwalstra@google.com",
+    "username": "kwalstra",
+    "password": "kwalstrapass",
+    "posts": [
+      {
+        "title": "kwalstra title - 1",
+        "fake_tweet": "kwalstra title fake tweet - 1"
+      },
+      {
+        "title": "kwalstra title - 2",
+        "fake_tweet": "kwalstra title fake tweet - 2"
+      },
+      {
+        "title": "kwalstra title - 3",
+        "fake_tweet": "kwalstra title fake tweet - 3"
+      },
+      {
+        "title": "kwalstra title - 4",
+        "fake_tweet": "kwalstra title fake tweet - 4"
+      },
+      {
+        "title": "kwalstra title - 5",
+        "fake_tweet": "kwalstra title fake tweet - 5"
+      },
+      {
+        "title": "kwalstra title - 6",
+        "fake_tweet": "kwalstra title fake tweet - 6"
+      },
+      {
+        "title": "kwalstra title - 7",
+        "fake_tweet": "kwalstra title fake tweet - 7"
+      },
+      {
+        "title": "kwalstra title - 8",
+        "fake_tweet": "kwalstra title fake tweet - 8"
+      },
+      {
+        "title": "kwalstra title - 9",
+        "fake_tweet": "kwalstra title fake tweet - 9"
+      },
+      {
+        "title": "kwalstra title - 10",
+        "fake_tweet": "kwalstra title fake tweet - 10"
+      }
+    ]
+  }
+]

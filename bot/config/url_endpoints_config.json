@@ -1,0 +1,15 @@
+{
+    "signup": "/api/user/signup/",
+    "login": "/api/user/login/",
+    "get_jwt_token": "/api/user/login/",
+    "renew_jwt_token": "/api/user/token/refresh/",
+    "get_all_users": "/api/user/all/",
+    "get_user_details": "/api/user/{}/",
+    "get_current_user_details": "/api/user/me/",
+    "create_new_post": "/api/post/",
+    "get_all_posts": "/api/post/",
+    "get_post_details": "/api/post/{}/",
+    "like_a_post": "/api/post/{}/like/",
+    "dislike_a_post": "/api/post/{}/dislike/",
+    "get_current_users_post": "/api/post/me/"
+}
