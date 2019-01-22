@@ -14,7 +14,7 @@ class UserAdvInfo(models.Model):
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, username, email, password=None, adv_info=''):
+    def create_user(self, username, email, password=None, adv_info=None):
         """Creates and saves a new user"""
         if not username:
             raise ValueError("Username is mandatory")
@@ -45,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True, db_index=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    adv_info = models.OneToOneField(UserAdvInfo, blank=True, related_name="post_like", on_delete=models.PROTECT)
+    adv_info = models.OneToOneField(UserAdvInfo, blank=True, null=True, related_name="adv_info", on_delete=models.PROTECT)
 
     objects = UserManager()
 

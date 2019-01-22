@@ -6,7 +6,7 @@ BOT_CONFIG = './bot/config/bot_config.json'
 URL_ENDPOINTS = './bot/config/url_endpoints_config.json'
 
 # data set
-TEST_DATA_FILE = './bot/data/prak_net_test_data.json'
+TEST_DATA_FILE = './bot/data/fake_twitter_test_data.json'
 
 
 # Result data stores
