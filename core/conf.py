@@ -1,0 +1,3 @@
+HUNTER_BASE_API_ENDPOINT = 'https://api.hunter.io/v2/{}'
+HUNTER_VERIFY_EMAIL_ENDPOINT = 'email-verifier'
+MIN_EMAIL_VERIFICATION_SCORE = 50
