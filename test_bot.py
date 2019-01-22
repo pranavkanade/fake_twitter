@@ -17,6 +17,11 @@ class Utils:
             config = json.load(fp)
         return config
 
+    @staticmethod
+    def dump_result_to_file(config_file, data):
+        with open(config_file, 'w') as fp:
+            json.dump(data, fp)
+
 
 if __name__ == "__main__":
     bot_config = Utils.get_dict_from_json(BOT_CONFIG)
@@ -27,5 +32,6 @@ if __name__ == "__main__":
     bot.signup_users()
     bot.login_users()
     bot.create_posts()
-
-    pprint(bot.user_to_num_of_post_mapping)
+    bot.make_users_like_post_of_other_users()
+    all_posts = bot.get_all_posts()
+    Utils.dump_result_to_file('./bot/data/results/all_posts.json', all_posts)
